@@ -15,13 +15,20 @@ fi
 #echo $1
 #echo $2
 
+writedir=$(dirname $1)
+#echo "Dir name is $writedir"
 
+if [ ! -d $writedir ]
+then
+   echo "writer.sh Creating directory"
+   mkdir -p $writedir
+fi
  
 writefilestr=$1
 writestr=$2
 
 
-echo "$2" >> $1
+echo "$writestr" >> $writefilestr
  
 
 exit 0
